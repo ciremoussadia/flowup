@@ -7,6 +7,8 @@ class SubscriptionsController < ApplicationController
     @subscription = Subscription.new(subscription_params)
     if @subscription.save
       redirect_to root_path, flash: {success: "Inscription enregistrée avec succès."}
+    else
+      render :new
     end
   end
 

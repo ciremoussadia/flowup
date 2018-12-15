@@ -1,0 +1,17 @@
+fr:
+  activerecord:
+    models:
+      subscription: Inscription
+    attributes:
+      subscription:
+        name: Nom
+        address: Adresse
+        age: Age
+        tel: Téléphone
+        email: E-mail
+        song: Song MP3
+
+  helpers:
+    submit:
+      subscription:
+        create: "S'inscrire "

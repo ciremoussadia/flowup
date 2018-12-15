@@ -1,1 +1,4 @@
-= render partial: 'form', subscription: @subscription
+- if flash[:success]
+  = flash[:success]
+
+= render partial: 'form'

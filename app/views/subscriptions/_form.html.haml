@@ -1,2 +1,20 @@
-= form_for :subscription do |f|
+= form_for @subscription do |f|
+  = f.label :name
   = f.text_field :name
+  
+  = f.label :address
+  = f.text_field :address
+  
+  = f.label :age
+  = f.number_field :age
+
+  = f.label :tel
+  = f.telephone_field :tel
+
+  = f.label :email
+  = f.email_field :email
+
+  = f.label :song
+  = f.file_field :song
+
+  = f.submit

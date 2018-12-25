@@ -14,6 +14,6 @@ class SubscriptionsController < ApplicationController
 
   private
   def subscription_params
-    params.require(:subscription).permit(:name, :address, :age, :tel, :email)
+    params.require(:subscription).permit(:name, :address, :age, :tel, :email, :song)
   end
 end 

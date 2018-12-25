@@ -1,9 +1,10 @@
 FactoryBot.define do
   factory :subscription do
-    name { "Matador" }
-    address { "Thiaroye 44" }
-    age { 1 }
-    tel { "775185901" }
-    email { "matador@gmail.com" }
+    name { Faker::Artist.name }
+    address { Faker::Address.full_address }
+    age { Faker::Number.between(from = 18, to = 45) }
+    tel { Faker::PhoneNumber.phone_number}
+    email { Faker::Internet.email }
+    song { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'mysong.mp3'), 'audio/mpeg') }
   end
 end

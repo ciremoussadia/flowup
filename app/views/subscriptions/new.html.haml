@@ -1,4 +1,14 @@
-- if flash[:success]
-  = flash[:success]
+.ui.grid.container
+  .row
+    .ui.column.ten.wide
+      %h1
+        Flow Up
+      %h2
+        Tremplin du Hip Hop Galsen
+    .column.six.wide.right.floated
+      %h2.ui.header
+        Inscription
+      - if flash[:success]
+        = flash[:success]
 
-= render partial: 'form'
+      = render partial: 'form'

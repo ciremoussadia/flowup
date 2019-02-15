@@ -1,20 +1,27 @@
-= form_for @subscription do |f|
-  = f.label :name
-  = f.text_field :name
+= form_for @subscription, html: { class: 'ui form'} do |f|
+  .field
+    = f.label :name
+    = f.text_field :name, autofocus: true, required: true
+
+  .field
+    = f.label :address
+    = f.text_field :address, required: true
   
-  = f.label :address
-  = f.text_field :address
+  .field 
+    = f.label :age
+    = f.number_field :age, required: true
   
-  = f.label :age
-  = f.number_field :age
+  .field
+    = f.label :tel
+    = f.telephone_field :tel, required: true
 
-  = f.label :tel
-  = f.telephone_field :tel
-
-  = f.label :email
-  = f.email_field :email
-
-  = f.label :song
-  = f.file_field :song
-
-  = f.submit
+  .field
+    = f.label :email
+    = f.email_field :email, required: true
+  
+  .ui.field
+    = f.label :song
+    = f.file_field :song, required: true
+  
+  .field
+    = f.submit "S'inscrire",class: 'ui button primary'

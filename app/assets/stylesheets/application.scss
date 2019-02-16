@@ -14,10 +14,13 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700|Permanent+Marker');
+
 body {
   background-image: url('crowd.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Josefin Sans', sans-serif;
 }
 main {
   background-color: hsla(255, 0%, 100%, .85)
@@ -28,6 +31,7 @@ section{
 .presentation {
   color: #d05e21;
   font-weight: 100;
+  
   h1 {
     font-size: 6rem;
     text-transform: uppercase;
@@ -35,10 +39,14 @@ section{
     line-height: 0rem;
     font-weight: 400;
     color: #d05e21;
+    font-family: 'Permanent Marker', cursive;
+
   }
   h2 {
     font-weight: 100;
     letter-spacing: .6rem;
+    font-family: 'Permanent Marker', cursive;
+
   }
   p {
     font-size: 1.4rem;

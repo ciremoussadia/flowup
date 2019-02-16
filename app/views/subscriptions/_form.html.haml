@@ -21,7 +21,8 @@
   
   .ui.field
     = f.label :song
-    = f.file_field :song, required: true
+    .file
+      = f.file_field :song, required: true
   
   .field
     = f.submit "S'inscrire",class: 'ui button fluid'

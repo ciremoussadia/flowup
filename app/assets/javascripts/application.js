@@ -13,4 +13,5 @@
 //= require rails-ujs
 //= require turbolinks
 //= require semantic
+//= require activestorage
 //= require_tree .

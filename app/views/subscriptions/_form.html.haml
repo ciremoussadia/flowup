@@ -19,10 +19,10 @@
     = f.label :email
     = f.email_field :email, required: true
   
-  .ui.field
+  .field
     = f.label :song
     .file
-      = f.file_field :song, required: true
-  
+      = f.file_field :song, required: true, direct_upload: true
+
   .field
     = f.submit "S'inscrire",class: 'ui button fluid'

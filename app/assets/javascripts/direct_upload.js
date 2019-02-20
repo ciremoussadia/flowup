@@ -13,7 +13,7 @@ addEventListener("direct-upload:start", event => {
   const { id } = event.detail
   const element = document.getElementById(`direct-upload-${id}`)
   element.classList.remove("direct-upload--pending")
-  $('.ui .progress .bar').style.width = `${progress}%`
+  $('.ui.progress .bar').style.width = `${progress}%`
 
 })
 
@@ -21,7 +21,7 @@ addEventListener("direct-upload:progress", event => {
   const { id, progress } = event.detail
   const progressElement = document.getElementById(`direct-upload-progress-${id}`)
   progressElement.style.width = `${progress}%`
-  $('.ui .progress .bar').style.width = `${progress}%`
+  $('.ui .progress .bar').css('width',  `${progress}%`)
 
 })
 

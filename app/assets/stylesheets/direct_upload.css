@@ -1,3 +1,6 @@
+.ui.progress .bar {
+  min-width: 0;
+}
 .direct-upload {
   display: inline-block;
   position: relative;

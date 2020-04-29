@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Competitors Subscription' do
-  scenario 'with invalid data' do
+  scenario 'with valid data' do
     visit root_path
     fill_in "Nom", with: "Matador"
     fill_in "Adresse", with: "Thiaroye"

@@ -7,7 +7,6 @@ RSpec.describe Subscription, type: :model do
     it { should validate_presence_of(:age) }
     it { should validate_presence_of(:tel) }
     it { should validate_presence_of(:email) }
-    it { should validate_presence_of(:email) }
   end
 
   context 'attachement' do

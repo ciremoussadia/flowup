@@ -1,24 +1,24 @@
-class Subscription < ApplicationRecord
+# frozen_string_literal: true
 
+class Subscription < ApplicationRecord
   has_one_attached :song
   validate :song_present
-  validates_presence_of(
+  validates(
     :name,
     :address,
     :age,
     :tel,
-    :email
+    :email, presence: true
   )
 
   private
 
   def song_present
-    if song.attached? == false
-      errors.add(:song, 'Un fichier mp3 doit être ajouté.')
-    end
+    errors.add(:song, 'Un fichier mp3 doit être ajouté.') unless song.attached?
+    errors.add(:song, 'Le type de fichier doit être mp3.') unless song_type_audio?
+  end
 
-    if(song.attached? && !song.attachment.audio?)
-      errors.add(:song, 'Le type de fichier doit être mp3.')
-    end
+  def song_type_audio?
+    song.attachment.audio? if song.attached?
   end
 end

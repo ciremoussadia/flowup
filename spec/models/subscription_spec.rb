@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Subscription, type: :model do
@@ -15,7 +17,7 @@ RSpec.describe Subscription, type: :model do
       expect(subscription.song).to be_attached
     end
     it 'should upload the file' do
-      expect { subscription }.to change{ ActiveStorage::Attachment.count }.by(1)
+      expect { subscription }.to change { ActiveStorage::Attachment.count }.by(1)
     end
 
     context 'validations' do
@@ -23,7 +25,9 @@ RSpec.describe Subscription, type: :model do
         expect(build(:subscription, song: nil)).to_not be_valid
       end
       it 'is invalid if file type incorrect' do
-        expect(build(:subscription, song: fixture_file_upload('image.png', 'image/png') )).to_not be_valid
+        expect(
+          build(:subscription, song: fixture_file_upload('image.png', 'image/png'))
+        ).to_not be_valid
       end
     end
   end

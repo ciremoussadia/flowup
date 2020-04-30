@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -16,8 +18,8 @@ module FlowUp
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.generators.system_tests = nil
-    
-    config.i18n.available_locales = [:fr, :en]
+
+    config.i18n.available_locales = %i[fr en]
     config.i18n.default_locale = :fr
   end
 end

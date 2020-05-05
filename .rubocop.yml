@@ -6,14 +6,14 @@ require:
 
 AllCops:
   Exclude:
-    - 'db/**/*'
-    - 'script/**/*'
-    - 'bin/**/*'
+    - db/**/*
+    - script/**/*
+    - bin/**/*
     - config/**/*
 
   TargetRubyVersion: 2.6
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 100
 
 Metrics/BlockLength:
@@ -28,3 +28,26 @@ Lint/AmbiguousBlockAssociation:
 Style/Documentation:
   Enabled: false
 
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+ Enabled: true

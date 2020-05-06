@@ -24,7 +24,7 @@ describe 'create subscription', type: :request do
 
     it 'sends email to subscriber' do
       ActiveJob::Base.queue_adapter = :test
-      expect(create_subscription).to have_enqueued_mail(CompetitorMailer, :subscription)
+      expect { create_subscription }.to have_enqueued_mail(CandidateMailer, :subscription)
     end
   end
 

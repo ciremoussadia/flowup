@@ -1,13 +1,7 @@
 class CandidateMailer < ApplicationMailer
+  def subscription(candidate)
+    @candidate = candidate
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.candidate_mailer.subscription.subject
-  #
-  def subscription
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+    mail to: candidate.email, subject: 'Inscription Flow Up'
   end
 end

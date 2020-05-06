@@ -8,6 +8,7 @@ class SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.new(subscription_params)
     if @subscription.save
+      CandidateMailer.subscription(@subscription).deliver_later
       redirect_to root_path, flash: { success: 'Inscription enregistrée avec succès.' }
     else
       render :new

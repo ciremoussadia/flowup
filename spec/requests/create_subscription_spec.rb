@@ -21,6 +21,11 @@ describe 'create subscription', type: :request do
     it 'redirects to root path' do
       expect(create_subscription).to redirect_to root_path
     end
+
+    it 'sends email to subscriber' do
+      ActiveJob::Base.queue_adapter = :test
+      expect(create_subscription).to have_enqueued_mail(CompetitorMailer, :subscription)
+    end
   end
 
   context 'with invalid data' do

@@ -3,27 +3,35 @@
 require 'rails_helper'
 
 describe 'create subscription', type: :request do
+  subject(:create_subscription) { post endpoint, params: { subscription: subscription_params } }
+
   let(:endpoint) { '/subscriptions' }
   let(:subscription_params) { attributes_for(:subscription) }
-  subject { post endpoint, params: { subscription: subscription_params } }
 
   context 'with valid data' do
     it 'saves to db and redirect to home' do
-      expect { subject }.to change(Subscription, :count)
+      expect { create_subscription }.to change(Subscription, :count)
+    end
 
-      expect(response).to redirect_to root_path
+    it 'renders flash success' do
+      create_subscription
       expect(flash[:success]).to be_present
+    end
+
+    it 'redirects to root path' do
+      expect(create_subscription).to redirect_to root_path
     end
   end
 
   context 'with invalid data' do
     let(:subscription_params) { attributes_for(:subscription, name: '') }
-    it 'do not save to db and reload form' do
-      expect { subject }.to_not change(Subscription, :count)
+
+    it 'does not save to db' do
+      expect { create_subscription }.not_to change(Subscription, :count)
     end
 
-    it 'reload form' do
-      subject
+    it 'reloads form' do
+      create_subscription
       expect(response.code).to eq('200')
     end
   end
